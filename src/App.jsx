@@ -1,14 +1,19 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './styles.css';
 
 export default function App() {
   const [newItem, setNewItem] = useState('');
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(() => {
+    const savedTodos = localStorage.getItem('todos');
+    return savedTodos ? JSON.parse(savedTodos) : [];
+  });
+
+  useEffect(() => { localStorage.setItem('todos', JSON.stringify(todos)); }, [todos]);
 
   function handleSubmit(e) {
     e.preventDefault();
 
-    if (!newItem.trim()) return; // Prevent empty todos
+    if (!newItem.trim()) return;
 
     setTodos((currentTodos) => {
       return [...currentTodos, { id: crypto.randomUUID(), title: newItem, completed: false }];
