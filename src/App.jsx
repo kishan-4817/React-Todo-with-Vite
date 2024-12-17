@@ -45,6 +45,7 @@ export default function App() {
 
   return (
     <>
+    <div className="todo-wrapper">
       <form className="new-item-form" onSubmit={handleSubmit}>
         <div className="form-row">
           <label htmlFor="item">Item</label>
@@ -85,6 +86,7 @@ export default function App() {
           Delete All
         </button>
       )}
+    </div>  
     </>
   );
 }

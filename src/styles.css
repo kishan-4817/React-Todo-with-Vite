@@ -1,13 +1,34 @@
-/* General page styling */
+:root {
+  --color-body: #333;
+  --color-heading: #4a90e2;
+}
+
+html {
+  font-family: 'Lato', 'Rubik', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', serif;
+  color: var(--color-heading);
+}
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f3f4f6;
+  overflow: hidden;
   margin: 0;
   padding: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+}
+
+.todo-wrapper {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 h1.header {
