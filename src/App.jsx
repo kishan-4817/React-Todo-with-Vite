@@ -45,6 +45,7 @@ export default function App() {
 
   return (
     <>
+    <h1 className="header">Todo List</h1>
     <div className="todo-wrapper">
       <form className="new-item-form" onSubmit={handleSubmit}>
         <div className="form-row">
@@ -59,9 +60,6 @@ export default function App() {
         </div>
         <button className="btn">Add</button>
       </form>
-
-      <h1 className="header">Todo List</h1>
-
       <ul>
         {todos.length === 0 && <p className="empty-list">Your list is empty</p>}
         {todos.map((todo) => (

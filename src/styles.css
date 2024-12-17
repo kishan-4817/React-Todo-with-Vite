@@ -134,7 +134,7 @@ ul li label {
 }
 
 ul li.completed {
-  background-color: #e8f8e8;
+  background-color: #d7ecff;
   text-decoration: line-through;
   color: #999;
 }
