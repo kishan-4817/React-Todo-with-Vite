@@ -98,6 +98,25 @@ input[type="date"]:focus {
   outline: none;
 }
 
+/* Select/dropdown styling */
+select {
+  padding: 12px 15px;
+  font-size: 1.1rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  transition: border-color 0.3s;
+  width: 100%;
+  box-sizing: border-box;
+  cursor: pointer;
+  background-color: #fff;
+  color: #333;
+}
+
+select:focus {
+  border-color: #4a90e2;
+  outline: none;
+}
+
 /* Button styles */
 button.btn {
   background-color: #4a90e2;
@@ -160,6 +179,10 @@ ul li.due-soon {
   background-color: #f0f7ff;
 }
 
+ul li.has-priority {
+  border-top: 3px solid transparent;
+}
+
 .todo-content {
   flex: 1;
   display: flex;
@@ -167,11 +190,29 @@ ul li.due-soon {
   gap: 8px;
 }
 
+.todo-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
 .todo-content label {
   display: flex;
   align-items: center;
   font-size: 1.2rem;
   color: #333;
+}
+
+.priority-badge {
+  font-size: 0.85rem;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 12px;
+  white-space: nowrap;
+  display: inline-block;
+  border: 1px solid;
 }
 
 .due-date {
@@ -243,6 +284,14 @@ ul li input[type="checkbox"] {
     align-items: flex-start;
   }
 
+  .todo-header {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 5px;
+  }
+
   .todo-actions {
     width: 100%;
     margin-top: 10px;
@@ -256,5 +305,132 @@ ul li input[type="checkbox"] {
   .todo-content {
     width: 100%;
     margin-bottom: 10px;
+  }
+
+  .priority-badge {
+    font-size: 0.75rem;
+    padding: 3px 8px;
+  }
+}
+
+/* Priority Management Section */
+.priorities-section {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+}
+
+.priority-form {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+
+.priority-form .form-row {
+  flex: 1;
+  min-width: 150px;
+  margin-bottom: 0;
+}
+
+.priority-form label {
+  display: block !important;
+}
+
+.priority-form .btn {
+  align-self: flex-end;
+}
+
+.priorities-list {
+  margin-top: 20px;
+}
+
+.priorities-list h3 {
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+.priority-items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.priority-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 15px;
+  background-color: #fff;
+  border-left: 4px solid;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.priority-item-name {
+  flex: 1;
+  font-weight: 600;
+  color: #333;
+  font-size: 1rem;
+}
+
+.priority-item-color {
+  width: 25px;
+  height: 25px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.btn-small {
+  padding: 6px 12px;
+  font-size: 0.9rem;
+}
+
+/* Responsive for priority management */
+@media (max-width: 768px) {
+  .priority-form {
+    flex-direction: column;
+  }
+
+  .priority-form .form-row {
+    width: 100%;
+  }
+
+  .priority-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .priority-item-name {
+    width: 100%;
+  }
+
+  .btn-small {
+    width: 100%;
   }
 }
