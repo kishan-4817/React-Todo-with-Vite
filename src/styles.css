@@ -82,6 +82,22 @@ input[type="text"]:focus {
   outline: none;
 }
 
+input[type="date"] {
+  padding: 12px 15px;
+  font-size: 1.1rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  transition: border-color 0.3s;
+  width: 100%;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+input[type="date"]:focus {
+  border-color: #4a90e2;
+  outline: none;
+}
+
 /* Button styles */
 button.btn {
   background-color: #4a90e2;
@@ -125,7 +141,69 @@ ul li {
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, border-left 0.3s ease;
+  border-left: 4px solid transparent;
+}
+
+ul li.overdue {
+  border-left-color: #ff5c5c;
+  background-color: #fff5f5;
+}
+
+ul li.due-today {
+  border-left-color: #ffa500;
+  background-color: #fffbf0;
+}
+
+ul li.due-soon {
+  border-left-color: #4a90e2;
+  background-color: #f0f7ff;
+}
+
+.todo-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.todo-content label {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.due-date {
+  font-size: 0.9rem;
+  color: #666;
+  padding: 4px 8px;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-radius: 4px;
+  width: fit-content;
+}
+
+ul li.overdue .due-date {
+  color: #ff5c5c;
+  background-color: rgba(255, 92, 92, 0.1);
+  font-weight: bold;
+}
+
+ul li.due-today .due-date {
+  color: #ffa500;
+  background-color: rgba(255, 165, 0, 0.1);
+  font-weight: bold;
+}
+
+ul li.due-soon .due-date {
+  color: #4a90e2;
+  background-color: rgba(74, 144, 226, 0.1);
+  font-weight: bold;
+}
+
+.todo-actions {
+  display: flex;
+  gap: 8px;
 }
 
 ul li label {
@@ -158,5 +236,25 @@ ul li input[type="checkbox"] {
   .new-item-form {
     flex-direction: column;
     align-items: stretch;
+  }
+
+  ul li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .todo-actions {
+    width: 100%;
+    margin-top: 10px;
+    gap: 8px;
+  }
+
+  .todo-actions button {
+    flex: 1;
+  }
+
+  .todo-content {
+    width: 100%;
+    margin-bottom: 10px;
   }
 }
